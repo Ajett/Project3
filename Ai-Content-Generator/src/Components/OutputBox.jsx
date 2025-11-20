@@ -179,62 +179,9 @@ export default function OutputBox({ output }) {
         )}
       </div>
 
-      {/* Statistics Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border border-blue-200 dark:border-blue-700 rounded-xl p-4 text-center group hover:scale-105 transition-transform duration-300">
-          <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">{wordCount}</div>
-          <div className="text-sm text-blue-700 dark:text-blue-300 font-medium">Words</div>
-        </div>
+    
 
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border border-purple-200 dark:border-purple-700 rounded-xl p-4 text-center group hover:scale-105 transition-transform duration-300">
-          <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">{charCount}</div>
-          <div className="text-sm text-purple-700 dark:text-purple-300 font-medium">Characters</div>
-        </div>
-
-        <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border border-green-200 dark:border-green-700 rounded-xl p-4 text-center group hover:scale-105 transition-transform duration-300">
-          <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-1">{readTime}</div>
-          <div className="text-sm text-green-700 dark:text-green-300 font-medium">Min Read</div>
-        </div>
-
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-xl p-4 text-center group hover:scale-105 transition-transform duration-300">
-          <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-1">{paragraphCount}</div>
-          <div className="text-sm text-orange-700 dark:text-orange-300 font-medium">Paragraphs</div>
-        </div>
-      </div>
-
-      {/* Additional Info */}
-      <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-        <h4 className="font-semibold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-          <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          Content Insights
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-            <span className="text-gray-600 dark:text-gray-300">Sentences</span>
-            <span className="font-semibold text-gray-800 dark:text-white">{sentenceCount}</span>
-          </div>
-          <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-            <span className="text-gray-600 dark:text-gray-300">Reading Level</span>
-            <span className="font-semibold text-gray-800 dark:text-white">
-              {wordCount > 500 ? 'Detailed' : wordCount > 200 ? 'Standard' : 'Concise'}
-            </span>
-          </div>
-          <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-            <span className="text-gray-600 dark:text-gray-300">Words per Sentence</span>
-            <span className="font-semibold text-gray-800 dark:text-white">
-              {sentenceCount > 0 ? Math.round(wordCount / sentenceCount) : 0}
-            </span>
-          </div>
-          <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-            <span className="text-gray-600 dark:text-gray-300">Content Density</span>
-            <span className="font-semibold text-gray-800 dark:text-white">
-              {charCount > 0 ? Math.round((wordCount / charCount) * 100) : 0}%
-            </span>
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 }
