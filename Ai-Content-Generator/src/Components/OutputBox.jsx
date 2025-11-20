@@ -47,11 +47,6 @@ export default function OutputBox({ output }) {
     }
   }, [output, isExpanded]);
 
-  const wordCount = output.split(/\s+/).filter(word => word.length > 0).length;
-  const charCount = output.length;
-  const readTime = Math.ceil(wordCount / 200);
-  const paragraphCount = output.split('\n').filter(line => line.trim().length > 0).length;
-  const sentenceCount = output.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0).length;
 
   return (
     <div className="space-y-6 animate-fade-in">
